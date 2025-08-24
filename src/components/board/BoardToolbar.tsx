@@ -3,12 +3,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { setSearch, setFilterLabel, setSortBy } from "@/redux/slices/taskSlice";
-import { selectVisibleTasks } from "@/redux/slices/taskSlice";
 
 const labelOptions = ["Bug", "Security", "UI", "Performance", "Docs"];
 
 export default function BoardToolbar() {
-  const tasks = useSelector(selectVisibleTasks);
   const dispatch = useDispatch();
   const { search, label, sortBy } = useSelector((s: RootState) => s.tasks);
 

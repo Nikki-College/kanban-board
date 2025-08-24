@@ -13,7 +13,7 @@ export default function TaskModal() {
     "Low" | "Medium" | "High" | "Critical"
   >("Low");
 
-  const [label, setLabel] = useState("Bug");
+  const [label, setLabel] = useState<string>("Bug");
   const [dueDate, setDueDate] = useState("");
   const dispatch = useDispatch();
 
@@ -57,7 +57,11 @@ export default function TaskModal() {
             />
             <select
               value={severity}
-              onChange={(e) => setSeverity(e.target.value as any)}
+              onChange={(e) =>
+                setSeverity(
+                  e.target.value as "Low" | "Medium" | "High" | "Critical"
+                )
+              }
               className="border p-2 rounded"
             >
               <option>Low</option>
@@ -68,7 +72,7 @@ export default function TaskModal() {
 
             <select
               value={label}
-              onChange={(e) => setLabel(e.target.value as any)}
+              onChange={(e) => setLabel(e.target.value as string)}
               className="border p-2 rounded"
             >
               {labelOptions.map((opt) => (

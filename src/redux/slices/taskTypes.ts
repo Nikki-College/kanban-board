@@ -5,4 +5,5 @@ export type Task = {
   label?: string;
   createdAt: string;
   column: string;
+  dueDate: string;
 };

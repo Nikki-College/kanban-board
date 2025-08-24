@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import Board from "@/components/board/Board";
 import BoardToolbar from "@/components/board/BoardToolbar";
 import TaskModal from "@/components/board/TaskModal";
-import TaskManager from "@/components/tasks/TaskManager";
 
 export default function BoardPage() {
   const dispatch = useDispatch<AppDispatch>();

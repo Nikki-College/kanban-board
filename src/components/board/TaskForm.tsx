@@ -3,9 +3,10 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTask, editTask } from "@/redux/slices/taskSlice";
 import { v4 as uuid } from "uuid";
+import { Task } from "@/redux/slices/taskTypes";
 
 interface TaskFormProps {
-  taskToEdit?: any;
+  taskToEdit?: Task;
   onClose: () => void;
 }
 
@@ -63,7 +64,9 @@ export default function TaskForm({ taskToEdit, onClose }: TaskFormProps) {
 
       <select
         value={severity}
-        onChange={(e) => setSeverity(e.target.value)}
+        onChange={(e) =>
+          setSeverity(e.target.value as "Low" | "Medium" | "High" | "Critical")
+        }
         className="border p-2 rounded"
       >
         {severityOptions.map((s) => (

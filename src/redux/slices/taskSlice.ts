@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import { RootState } from "../store";
 
 export type Task = {
-  id: any;
+  id: string;
   title: string;
   severity: "Low" | "Medium" | "High" | "Critical";
   label: string;

@@ -4,8 +4,9 @@ import { deleteTask } from "@/redux/slices/taskSlice";
 import { useDraggable } from "@dnd-kit/core";
 import { Trash2, Pencil } from "lucide-react";
 import TaskForm from "./TaskForm";
+import { Task } from "@/redux/slices/taskTypes";
 
-export default function TaskCard({ task }: { task: any }) {
+export default function TaskCard({ task }: { task: Task }) {
   const dispatch = useDispatch();
   const { attributes, listeners, setNodeRef, transform, isDragging } =
     useDraggable({ id: task.id });

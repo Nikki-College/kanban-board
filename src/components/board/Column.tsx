@@ -1,9 +1,9 @@
 "use client";
 import { useSelector } from "react-redux";
-import { RootState } from "@/redux/store";
 import TaskCard from "./TaskCard";
 import { useDroppable } from "@dnd-kit/core";
 import { selectVisibleTasks } from "@/redux/slices/taskSlice";
+import { Task } from "@/redux/slices/taskTypes";
 
 export default function Column({ title }: { title: string }) {
   const allTasks = useSelector(selectVisibleTasks);
@@ -29,7 +29,7 @@ export default function Column({ title }: { title: string }) {
 
       <div className="flex flex-col gap-2 min-h-[200px]">
         {tasks.map((task) => (
-          <TaskCard key={task.id} task={task} />
+          <TaskCard key={task.id} task={task as Task} />
         ))}
       </div>
     </div>
