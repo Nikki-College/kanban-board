@@ -24,7 +24,7 @@ export default function Board() {
     <DndContext onDragEnd={handleDragEnd}>
       <div className="p-6">
         <div className="flex gap-4 mt-6">
-          {columns.map((col) => (
+          {columns.map((col: string) => (
             <Column key={col} title={col} />
           ))}
         </div>
